@@ -17,7 +17,7 @@ object RequestHandler {
     } else if (!Files.exists(path)) {
       Response(NotFound, HtmlMime, Files.readAllBytes(NotFountHtmlPath))
     } else {
-      Response(Ok, MimeDetector.getMime(path.getFileName.toString), Files.readAllBytes(path))
+      Response(Ok, HtmlMime, Files.readAllBytes(path))
     }
   }
 }
