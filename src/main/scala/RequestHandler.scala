@@ -4,7 +4,7 @@ object RequestHandler {
   val BadRequestHtmlPath: Path = Paths.get("public/400.html")
   val ForbiddenHtmlPath: Path = Paths.get("public/403.html")
   val NotFountHtmlPath: Path = Paths.get("public/404.html")
-  val HtmlMime: String = "text/html;charset=utf8"
+  val HtmlMime: String = "text/html; charset=utf8"
 
   def handleRequest(request: Request): Response = {
     val normalizedPath = Paths.get("public", request.targetPath).normalize()
