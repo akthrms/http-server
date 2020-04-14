@@ -7,7 +7,7 @@ object MimeDetector {
 
     getContentType(path) match {
       case Some(mime) => mime
-      case None => HtmlFileTypeDetector.getContentType(path) match {
+      case None => HtmlMimeDetector.getContentType(path) match {
         case Some(mime) => mime
         case None => null
       }
@@ -18,12 +18,15 @@ object MimeDetector {
     Option(Files.probeContentType(path))
 }
 
+object HtmlMimeDetector {
+  def getContentType(path: Path): Option[String] = {
+    Option(HtmlFileTypeDetector.probeContentType(path))
+  }
+}
+
 object HtmlFileTypeDetector extends FileTypeDetector {
   override def probeContentType(path: Path): String = {
     if (path.getFileName.toString.endsWith(".html")) "text/html; charset=utf8"
     else null
   }
-
-  def getContentType(path: Path): Option[String] =
-    Option(probeContentType(path))
 }
