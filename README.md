@@ -23,3 +23,8 @@ Connection: Close
 </body>
 </html>
 ```
+
+## Works Cited
+
+* [新しいプログラミング言語の学び方 HTTPサーバーを作って学ぶ Java, Scala, Clojure](https://speakerdeck.com/todokr/xin-siihurokuraminkuyan-yu-falsexue-hifang-httpsahawozuo-tutexue-hu-java-scala-clojure)
+* [Simple HTTP Servers written in Java, Scala & Clojure.](https://github.com/todokr/simple-http-server)
