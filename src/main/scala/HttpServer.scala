@@ -1,4 +1,5 @@
 import java.net.ServerSocket
+import java.util.Date
 
 import IOUtil._
 import RequestHandler._
@@ -23,7 +24,10 @@ object HttpServer extends App {
         val out = s.getOutputStream
 
         val request = parser.fromInputStream(in)
-        request.foreach(r => println(s"${r.method} ${r.targetPath} ${r.httpVersion}"))
+        request.foreach { r =>
+          val datetime = "%tY-%<tm-%<td %<tH:%<tM:%<tS".format(new Date())
+          println(s"[${datetime}] ${r.method} ${r.targetPath} ${r.httpVersion}")
+        }
         val response = request.map(handleRequest)
         response.foreach(_.writeTo(out))
       }
