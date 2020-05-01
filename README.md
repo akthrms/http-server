@@ -1,6 +1,8 @@
 # http-server
 
-## Usage
+簡易HTTPサーバー
+
+## 使い方
 
 ```sh
 $ sbt run
@@ -24,7 +26,6 @@ Connection: Close
 </html>
 ```
 
-## Works Cited
+## 参考
 
 * [新しいプログラミング言語の学び方 HTTPサーバーを作って学ぶ Java, Scala, Clojure](https://speakerdeck.com/todokr/xin-siihurokuraminkuyan-yu-falsexue-hifang-httpsahawozuo-tutexue-hu-java-scala-clojure)
-* [Simple HTTP Servers written in Java, Scala & Clojure.](https://github.com/todokr/simple-http-server)
